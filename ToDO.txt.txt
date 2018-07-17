@@ -1,0 +1,13 @@
+General
+-Write mini guide on .chart files
+
+- Expert to Begineer Net
+-- Write program to convert .chart to our version of 'guitar hero tab'
+
+
+George
+-Learn Keras
+-Make handwriting network
+
+
+Sam
