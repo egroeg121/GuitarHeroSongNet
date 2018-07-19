@@ -1,0 +1,109 @@
+[Song]
+{
+  Offset = 0 		-- How long it waits after the start of the song before the first bar. Shouldn't have to worry about this
+  Resolution = 192 	-- No. of ticks in a bar
+  Player2 = bass	-- Denotes whether player 2 should play bass or rhythm guitar part (this is a guess)
+  Difficulty = 0	-- Can specify how hard the song is (maybe)
+  PreviewStart = 0	-- Denotes the tick that the preview plays from when the song is highlighted in the menu
+  PreviewEnd = 0	-- Denotes the tick that the preview ends at when the song is highlighted in the menu
+  Genre = "rock"	-- Specify the genre
+  MediaType = "cd"	-- Don't see why this is necessary in a game with preloaded songs...
+}
+[SyncTrack]
+{
+  0 = TS 4		-- Time signature - 4/4
+  0 = B 120000 		-- BPM marking - 120 bpm at bar 0
+  2880 = B 160000 	-- BPM marking - 160 bpm at bar 2880/192 = 15 (remembering bars start at 0)
+  3072 = B 180000 	-- BPM marking - 180 bpm at bar 3072/192 = 17
+  3264 = B 200000 	-- BPM marking - 200 bpm at bar 3264/192 = 17
+  3456 = TS 1		-- Time signature - 1/4
+  3648 = TS 2		-- Time signature - 2/4
+  3840 = TS 3		-- Time signature - 3/4
+  4032 = TS 4		-- Time signature - 4/4
+  4224 = TS 5		-- Time signature - 5/4
+  4416 = TS 6		-- Time signature - 6/4
+  4608 = TS 7		-- Time signature - 7/4
+  4800 = TS 1 1		-- Time signature - 1/2
+  4992 = TS 2 1		-- Time signature - 2/2
+  5184 = TS 3 1		-- Time signature - 3/2
+  5376 = TS 4 1		-- Time signature - 4/2
+  5760 = TS 2 3		-- Time signature - 2/8
+  5952 = TS 3 3		-- Time signature - 3/8 -- first number = first number in time signature, second number is 
+						   the multiple of 2 that the second number is (no number defaults
+						   to 2*2=4)
+}
+[Events]
+{
+  5376 = E "section Daoeuoipoip.e"	-- Start of section named "Daoeuoipoip.e" should not need to worry about these
+  5568 = E "section p.oipoi"
+  5760 = E "half_tempo"
+  5952 = E "lighting (strobe)"
+  6144 = E "band_jump"
+  6336 = E "crowd_half_tempo"		-- All of these are events that trigger in game things. Should not neet to worry about these.
+}
+[ExpertSingle]
+{
+  0 = N 0 0 	-- Green note on zeroth beat
+  96 = N 1 0	-- Red note on second beat
+  192 = N 2 0	-- Yellow note on third beat
+  288 = N 3 0	-- Blue note on fourth beat
+  384 = N 4 0	-- Orange note on fifth beat (first beat of bar 2)
+  480 = N 0 0	-- Green note
+  480 = N 5 0 	-- Notes at tick 480 are hammer ons
+  576 = N 1 0	-- Red note
+  576 = N 5 0 	-- Notes at this tick are hammer ons
+  672 = N 2 0	-- Yellow note
+  672 = N 5 0 	-- Notes at this tick are hammer ons
+  768 = N 3 0	-- Blue note
+  768 = N 5 0 	-- Notes at this tick are hammer ons
+  864 = N 4 0	-- Orange note
+  864 = N 5 0 	-- Notes at this tick are hammer ons
+  960 = N 0 0	-- I will stop denoting the note markers
+  960 = N 6 0 	-- Notes at this tick are taps
+  1056 = N 1 0
+  1056 = N 6 0 	-- Notes at this tick are taps
+  1152 = N 2 0
+  1152 = N 6 0 	-- Notes at this tick are taps
+  1248 = N 3 0
+  1248 = N 6 0 	-- Notes at this tick are taps
+  1344 = N 4 0
+  1344 = N 6 0 	-- Notes at this tick are taps
+  1440 = N 0 0
+  1488 = N 1 0	-- Notes that quickly follow other notes are automatically made hammer ons in game
+  1536 = N 1 0	-- Unless they are the same colour
+  1584 = N 2 0  -- Hammer on
+  1632 = N 2 0	-- Not hammer on
+  1680 = N 3 0	-- Hammer on
+  1728 = N 3 0	-- Not hammer on
+  1776 = N 4 0
+  1920 = N 0 480-- Held green note. Held for 480 ticks (2.5 bars)
+  2016 = N 1 384-- Held red note. Held for 384 ticks
+  2112 = N 2 288-- Held yellow note. Held for 288 ticks
+  2208 = N 3 192-- Held blue note. Held for 192 ticks
+  2304 = N 4 96 -- Held orange note. Held for 96 ticks
+  2496 = N 0 0
+  2496 = N 1 0
+  2496 = N 5 0 	-- Only one flag needed even if two notes on same tick
+  2592 = N 1 0
+  2592 = N 2 0
+  2592 = N 5 0 
+  2688 = N 2 0
+  2688 = N 3 0
+  2688 = N 5 0 
+  2784 = N 3 0
+  2784 = N 4 0
+  2784 = N 5 0  -- See above
+  4032 = S 2 192-- Star power phrase starting at tick 4032 lasting for 192 ticks
+  4416 = S 2 768-- Star power phrase starting at tick 4416 lasting for 768 ticks
+  5952 = N 1 0 	-- First bar of 3/8
+  6048 = N 2 0
+  6144 = N 3 0 
+  6240 = N 0 0	-- Start of second bar of 3/8 - 288 ticks after the first bar.
+  6240 = N 4 0  -- Obviously a beat remains the same number of ticks and bars just take different numbers of ticks
+  6336 = N 2 0	   if the time signature changes. Beat length defined by either resolution/4 or resolution/first
+  6432 = N 3 0	   number of time signature (more testing required)
+  6528 = N 4 0
+  6720 = N 1 0
+  6720 = E solo	-- Start and end of solos specified in this section
+  7104 = E soloend
+}
