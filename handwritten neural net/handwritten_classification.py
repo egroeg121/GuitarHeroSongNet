@@ -14,7 +14,7 @@ except NameError:
     training_data=np.expand_dims(idx.read("train-images.idx3-ubyte"), axis=3)
     testing_data=training_data[0:15000,:,:,:]
     training_data=training_data[15000:-1,:,:,:]
-    
+
 try:
     training_labels
 except NameError:
@@ -22,7 +22,7 @@ except NameError:
     training_labels=to_categorical(idx.read("train-labels.idx1-ubyte"), num_classes=10)
     testing_labels=training_labels[0:15000,:]
     training_labels=training_labels[15000:-1,:]
-    
+
 #create model (VGG-like model)
 inputshape=[]
 inputshape[1:3]=training_data.shape[1:3]
